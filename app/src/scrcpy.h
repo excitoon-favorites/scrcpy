@@ -81,6 +81,7 @@ struct scrcpy_options {
     bool disable_screensaver;
     bool forward_key_repeat;
     bool use_ssh;
+    bool auto_turn_on;
 };
 
 #define SCRCPY_OPTIONS_DEFAULT { \
@@ -127,6 +128,7 @@ struct scrcpy_options {
     .forward_key_repeat = true, \
     .use_ssh = false, \
     .ssh_endpoint = NULL, \
+    .auto_turn_on = false, \
 }
 
 bool
