@@ -657,6 +657,7 @@ guess_record_format(const char *filename) {
 #define OPT_AUTO_TURN_ON           1023
 #define OPT_USE_SSH                1024
 #define OPT_SSH_ENDPOINT           1025
+#define OPT_USE_ADB_KEYBOARD       1026
 
 bool
 scrcpy_parse_args(struct scrcpy_cli_args *args, int argc, char *argv[]) {
@@ -696,6 +697,7 @@ scrcpy_parse_args(struct scrcpy_cli_args *args, int argc, char *argv[]) {
         {"ssh-endpoint",           required_argument, NULL, OPT_SSH_ENDPOINT},
         {"stay-awake",             no_argument,       NULL, 'w'},
         {"turn-screen-off",        no_argument,       NULL, 'S'},
+        {"use-adb-keyboard",       no_argument,       NULL, OPT_USE_ADB_KEYBOARD},
         {"verbosity",              required_argument, NULL, 'V'},
         {"version",                no_argument,       NULL, 'v'},
         {"window-title",           required_argument, NULL, OPT_WINDOW_TITLE},
@@ -781,6 +783,9 @@ scrcpy_parse_args(struct scrcpy_cli_args *args, int argc, char *argv[]) {
                 break;
             case 'S':
                 opts->turn_screen_off = true;
+                break;
+            case OPT_USE_ADB_KEYBOARD:
+                opts->use_adb_keyboard = true;
                 break;
             case 't':
                 opts->show_touches = true;

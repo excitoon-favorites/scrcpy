@@ -62,6 +62,7 @@ struct server_params {
     bool stay_awake;
     bool force_adb_forward;
     bool use_ssh;
+    bool use_adb_keyboard;
 };
 
 // init default values

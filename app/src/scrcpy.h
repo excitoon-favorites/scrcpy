@@ -82,6 +82,7 @@ struct scrcpy_options {
     bool forward_key_repeat;
     bool use_ssh;
     bool auto_turn_on;
+    bool use_adb_keyboard;
 };
 
 #define SCRCPY_OPTIONS_DEFAULT { \
@@ -129,6 +130,7 @@ struct scrcpy_options {
     .use_ssh = false, \
     .ssh_endpoint = NULL, \
     .auto_turn_on = false, \
+    .use_adb_keyboard = false, \
 }
 
 bool

@@ -331,6 +331,7 @@ scrcpy(const struct scrcpy_options *options) {
         .force_adb_forward = options->force_adb_forward,
         .use_ssh = options->use_ssh,
         .ssh_endpoint = options->ssh_endpoint,
+        .use_adb_keyboard = options->use_adb_keyboard,
     };
     if (!server_start(&server, options->serial, &params)) {
         return false;
